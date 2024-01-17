@@ -8,14 +8,14 @@ export default function Board() {
 
   const [winner, line] = calculateWinnerWithLine(squares);
 
-  const [results, setResults] = useState({ X: 0, O: 0, D: 0 });
+  const [results, setResults] = useState({ X: 7, O: 1, D: 2 });
 
   function handleResult(result) {
     setTimeout(() => {
       setResults({ ...results, [result]: results[result] + 1 });
       setSquares(Array(9).fill(null));
       setXIsNext(true);
-    }, 1000);
+    }, 1500);
   }
 
   let status;
@@ -40,7 +40,7 @@ export default function Board() {
         setTimeout(() => {
           setSquares(newSquares);
           setXIsNext(!xIsNext);
-        }, 500);
+        }, 250);
       }
     }
   }
@@ -61,11 +61,11 @@ export default function Board() {
 
   return (
     <>
-      <div className="dark:bg-slate-800 bg-gray-100 rounded-lg p-4">
-        <div className="text-center text-sky-700 font-bold text-4xl">
+      <div className="dark:bg-slate-800 bg-gray-100 rounded-lg px-8 pb-6 pt-2">
+        <div className="text-center text-sky-700 font-bold text-2xl sm:text-4xl">
           {status}
         </div>
-        <div className="grid grid-cols-3 pt-4">
+        <div className="grid grid-cols-3 pt-3 sm:pt-4">
           <Square
             value={squares[0]}
             onSquareClick={() => handleClick(0)}
@@ -113,7 +113,7 @@ export default function Board() {
           />
         </div>
       </div>
-      <div className="dark:bg-slate-800 bg-gray-100 rounded-lg p-4">
+      <div className="dark:bg-slate-800 bg-gray-100 rounded-lg px-8 pb-6 pt-2">
         <Result results={results} />
       </div>
     </>

@@ -1,6 +1,6 @@
 export default function Header({ title }) {
   return (
-    <header className="py-4 dark:bg-slate-950 bg-gray-50 shadow w-full sticky top-0 z-50">
+    <header className="px-4 py-2 sm:py-4 dark:bg-slate-950 bg-gray-50 shadow w-full sticky top-0 z-50">
       <nav className="container max-w-5xl mx-auto flex justify-between items-center gap-4">
         <a
           className="size-10 md:size-16 rounded-full border-4 border-double border-sky-700 bg-white flex justify-center items-center text-sky-700 font-bold shrink-0 grow-0"
