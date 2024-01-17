@@ -8,7 +8,7 @@ export default function Board() {
 
   const [winner, line] = calculateWinnerWithLine(squares);
 
-  const [results, setResults] = useState({ X: 7, O: 1, D: 2 });
+  const [results, setResults] = useState({ X: 0, O: 0, D: 0 });
 
   function handleResult(result) {
     setTimeout(() => {
